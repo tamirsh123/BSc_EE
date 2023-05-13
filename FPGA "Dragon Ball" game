@@ -1,0 +1,4 @@
+Created An interactive game using Intel’s FPGA that allows a player to control a character through FPGA's buttons and switches, and perform various actions, such as moving, jumping, shooting (by various kinds of shots), killing enemies and getting score.
+the project was constructed by hierarchical design of integrated schematic blocks written in HDL – SystemVerilog, via Intel Quartos Prime.
+Each block was assigned for specific functionality to create modularity, and reused as possible in order to reduce resource consumption and improve performance.
+Design was Debugged through signal tap logic analyzer by making simulations along with running analyses and syntheses.
