@@ -1,0 +1,151 @@
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+        -sort_by group
+Design : top
+Version: R-2020.09-SP2
+Date   : Sun Jan 22 15:56:00 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: tsl18fs120_typ   Library: tsl18fs120_typ
+Wire Load Model Mode: enclosed
+
+  Startpoint: axi_lite_inst/read_addr_fifo/U1/U2/this_addr_g_int_reg[0]
+              (rising edge-triggered flip-flop clocked by up_ACLK)
+  Endpoint: axi_lite_inst/read_addr_fifo/U1/U1/U_sync/sample_syncf_reg[0]
+            (rising edge-triggered flip-flop clocked by ACLK)
+  Path Group: ACLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                140000                tsl18fs120_typ
+  axi_lite_DW_fifoctl_s2_sf_1
+                     4000                  tsl18fs120_typ
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock up_ACLK (rise edge)                              10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  axi_lite_inst/read_addr_fifo/U1/U2/this_addr_g_int_reg[0]/CP (decrq1)
+                                                          0.00 #    10.00 r
+  axi_lite_inst/read_addr_fifo/U1/U2/this_addr_g_int_reg[0]/Q (decrq1)
+                                                          0.27      10.27 f
+  axi_lite_inst/read_addr_fifo/U1/U2/this_addr_g[0] (axi_lite_DW_FIFOCTL_IF_3)
+                                                          0.00      10.27 f
+  axi_lite_inst/read_addr_fifo/U1/U1/other_addr_g[0] (axi_lite_DW_FIFOCTL_IF_2)
+                                                          0.00      10.27 f
+  axi_lite_inst/read_addr_fifo/U1/U1/U_sync/sample_syncf_reg[0]/D (dfcrq1)
+                                                          0.00      10.27 f
+  data arrival time                                                 10.27
+
+  clock ACLK (rise edge)                                 20.00      20.00
+  clock network delay (ideal)                             0.00      20.00
+  axi_lite_inst/read_addr_fifo/U1/U1/U_sync/sample_syncf_reg[0]/CP (dfcrq1)
+                                                          0.00      20.00 r
+  library setup time                                     -0.09      19.91
+  data required time                                                19.91
+  --------------------------------------------------------------------------
+  data required time                                                19.91
+  data arrival time                                                -10.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        9.64
+
+
+  Startpoint: controller_inst/contrast_LUT_inst/cp_param_reg[shifter_b][val][0]
+              (rising edge-triggered flip-flop clocked by up_ACLK)
+  Endpoint: datapath_channel_B/contrast_inst/color_out_reg[0]
+            (rising edge-triggered flip-flop clocked by up_ACLK)
+  Path Group: up_ACLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                140000                tsl18fs120_typ
+  shifter_3          ForQA                 tsl18fs120_typ
+  contrast_2         4000                  tsl18fs120_typ
+  contrast_2_DW01_sub_0_DW01_sub_3
+                     ForQA                 tsl18fs120_typ
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock up_ACLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  controller_inst/contrast_LUT_inst/cp_param_reg[shifter_b][val][0]/CP (dfcrq1)
+                                                          0.00 #     0.00 r
+  controller_inst/contrast_LUT_inst/cp_param_reg[shifter_b][val][0]/Q (dfcrq1)
+                                                          0.56       0.56 r
+  controller_inst/contrast_LUT_inst/cp_param[shifter_b][val][0] (contrast_LUT)
+                                                          0.00       0.56 r
+  controller_inst/cp_param[shifter_b][val][0] (controller)
+                                                          0.00       0.56 r
+  datapath_channel_B/cp_param[shifter_b][val][0] (datapath_channel_2)
+                                                          0.00       0.56 r
+  datapath_channel_B/contrast_inst/cp_param[shifter_b][val][0] (contrast_2)
+                                                          0.00       0.56 r
+  datapath_channel_B/contrast_inst/shifter_b/shifter_param[val][0] (shifter_3)
+                                                          0.00       0.56 r
+  datapath_channel_B/contrast_inst/shifter_b/U14/ZN (nd02d1)
+                                                          0.26       0.82 f
+  datapath_channel_B/contrast_inst/shifter_b/U8/ZN (inv0d0)
+                                                          0.43       1.25 r
+  datapath_channel_B/contrast_inst/shifter_b/U49/ZN (oaim211d1)
+                                                          0.41       1.66 r
+  datapath_channel_B/contrast_inst/shifter_b/U3/ZN (inv0d0)
+                                                          0.28       1.94 f
+  datapath_channel_B/contrast_inst/shifter_b/U47/ZN (oai22d1)
+                                                          0.25       2.19 r
+  datapath_channel_B/contrast_inst/shifter_b/color_out[0] (shifter_3)
+                                                          0.00       2.19 r
+  datapath_channel_B/contrast_inst/sub_51/B[0] (contrast_2_DW01_sub_0_DW01_sub_3)
+                                                          0.00       2.19 r
+  datapath_channel_B/contrast_inst/sub_51/U14/ZN (inv0d0)
+                                                          0.19       2.38 f
+  datapath_channel_B/contrast_inst/sub_51/U5/ZN (inv0d0)
+                                                          0.18       2.57 r
+  datapath_channel_B/contrast_inst/sub_51/U7/ZN (nd02d1)
+                                                          0.12       2.68 f
+  datapath_channel_B/contrast_inst/sub_51/U2_1/CO (ad01d0)
+                                                          0.29       2.97 f
+  datapath_channel_B/contrast_inst/sub_51/U2_2/CO (ad01d0)
+                                                          0.30       3.27 f
+  datapath_channel_B/contrast_inst/sub_51/U2_3/CO (ad01d0)
+                                                          0.30       3.57 f
+  datapath_channel_B/contrast_inst/sub_51/U2_4/CO (ad01d0)
+                                                          0.30       3.86 f
+  datapath_channel_B/contrast_inst/sub_51/U2_5/CO (ad01d0)
+                                                          0.30       4.16 f
+  datapath_channel_B/contrast_inst/sub_51/U2_6/CO (ad01d0)
+                                                          0.30       4.45 f
+  datapath_channel_B/contrast_inst/sub_51/U2_7/CO (ad01d0)
+                                                          0.30       4.75 f
+  datapath_channel_B/contrast_inst/sub_51/U2_8/CO (ad01d0)
+                                                          0.30       5.05 f
+  datapath_channel_B/contrast_inst/sub_51/U2_9/S (ad01d0)
+                                                          0.26       5.31 f
+  datapath_channel_B/contrast_inst/sub_51/DIFF[9] (contrast_2_DW01_sub_0_DW01_sub_3)
+                                                          0.00       5.31 f
+  datapath_channel_B/contrast_inst/U26/Z (ora31d1)        0.23       5.53 f
+  datapath_channel_B/contrast_inst/U25/ZN (oai21d1)       0.61       6.15 r
+  datapath_channel_B/contrast_inst/U23/ZN (oaim211d1)     0.07       6.21 f
+  datapath_channel_B/contrast_inst/color_out_reg[0]/D (decrq1)
+                                                          0.00       6.21 f
+  data arrival time                                                  6.21
+
+  clock up_ACLK (rise edge)                              10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  datapath_channel_B/contrast_inst/color_out_reg[0]/CP (decrq1)
+                                                          0.00      10.00 r
+  library setup time                                     -0.25       9.75
+  data required time                                                 9.75
+  --------------------------------------------------------------------------
+  data required time                                                 9.75
+  data arrival time                                                 -6.21
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.53
+
+

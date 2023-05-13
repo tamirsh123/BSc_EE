@@ -1,0 +1,1863 @@
+Initializing gui preferences from file  /users/epttsm/.synopsys_dc_gui/preferences.tcl
+dc_shell> gui_start
+4.1
+design_vision> analyze -library WORK -format sverilog {../design/pkg.sv ../design/brightness.sv ../design/contrast.sv ../design/shifter.sv ../design/axi_lite.sv ../design/controller.sv ../design/contrast_LUT.sv ../design/gamma_LUT.sv ../design/datapath_channel.sv ../design/axi_stream_master.sv ../design/axi_stream_slave.sv ../design/top.sv}
+Running PRESTO HDLC
+Compiling source file ../design/pkg.sv
+Warning:  ../design/pkg.sv:9: The package pkg has already been analyzed. It is being replaced. (VER-26)
+Warning:  ../design/pkg.sv:12: Parameter keyword used in local parameter declaration. (VER-329)
+Compiling source file ../design/brightness.sv
+Compiling source file ../design/contrast.sv
+Compiling source file ../design/shifter.sv
+Compiling source file ../design/axi_lite.sv
+Compiling source file ../design/controller.sv
+Compiling source file ../design/contrast_LUT.sv
+Compiling source file ../design/gamma_LUT.sv
+Compiling source file ../design/datapath_channel.sv
+Compiling source file ../design/axi_stream_master.sv
+Compiling source file ../design/axi_stream_slave.sv
+Compiling source file ../design/top.sv
+Presto compilation completed successfully.
+Loading db file '/tools/kits/tower/PDK_TS18SL/FS120_STD_Cells_0_18um_2005_12/DW_TOWER_tsl18fs120/2005.12/synopsys/2004.12/models/tsl18fs120_typ.db'
+Loading db file '/eda/synopsys/2020-21/RHELx86/SYN_2020.09-SP2/libraries/syn/dw_foundation.sldb'
+design_vision> elaborate  -library WORK -update
+Error: Required argument 'design_name' was not found (CMD-007)
+design_vision> analyze -library WORK -format sverilog {../design/pkg.sv ../design/brightness.sv ../design/contrast.sv ../design/shifter.sv ../design/axi_lite.sv ../design/controller.sv ../design/contrast_LUT.sv ../design/gamma_LUT.sv ../design/datapath_channel.sv ../design/axi_stream_master.sv ../design/axi_stream_slave.sv ../design/top.sv}
+Running PRESTO HDLC
+Compiling source file ../design/pkg.sv
+Warning:  ../design/pkg.sv:9: The package pkg has already been analyzed. It is being replaced. (VER-26)
+Warning:  ../design/pkg.sv:12: Parameter keyword used in local parameter declaration. (VER-329)
+Compiling source file ../design/brightness.sv
+Compiling source file ../design/contrast.sv
+Compiling source file ../design/shifter.sv
+Compiling source file ../design/axi_lite.sv
+Compiling source file ../design/controller.sv
+Compiling source file ../design/contrast_LUT.sv
+Compiling source file ../design/gamma_LUT.sv
+Compiling source file ../design/datapath_channel.sv
+Compiling source file ../design/axi_stream_master.sv
+Compiling source file ../design/axi_stream_slave.sv
+Compiling source file ../design/top.sv
+Presto compilation completed successfully.
+1
+design_vision> 
+Launching firefox to view document
+design_vision> analyze -library WORK -format sverilog {../design/top.sv}
+Running PRESTO HDLC
+Compiling source file ../design/top.sv
+Presto compilation completed successfully.
+1
+design_vision> elaborate  -library WORK -update
+Error: Required argument 'design_name' was not found (CMD-007)
+design_vision> elaborate  -library WORK -update
+Error: Required argument 'design_name' was not found (CMD-007)
+design_vision> elaborate brightness -architecture verilog -library WORK -update
+Warning: Detected use of obsolete/unsupported feature.  The following
+        will not be available in a future release of the application:
+        elaborate -update. Use plain elaborate instead (CMD-100)
+Loading db file '/eda/synopsys/2020-21/RHELx86/SYN_2020.09-SP2/libraries/syn/gtech.db'
+Loading db file '/eda/synopsys/2020-21/RHELx86/SYN_2020.09-SP2/libraries/syn/standard.sldb'
+  Loading link library 'tsl18fs120_typ'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  ../design/brightness.sv:49: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../design/brightness.sv:58: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+        in routine brightness line 32 in file
+                '../design/brightness.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| color_out_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    color_out_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (brightness)
+Elaborated 1 design.
+Current design is now 'brightness'.
+design_vision> 
+Current design is 'brightness'.
+reset_design
+design_vision> reset_design
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/top.sv}
+Loading sverilog file '/users/epttsm/Project/design/top.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/top.sv
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/top.db:top'
+Loaded 1 design.
+Current design is 'top'.
+design_vision> 
+Current design is 'top'.
+design_vision> elaborate  -library WORK -update
+Error: Required argument 'design_name' was not found (CMD-007)
+design_vision> 
+Warning: Design 'top' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+design_vision> remove_design -designs
+Removing design 'brightness'
+Removing design 'top'
+Removing design 'axi_lite'
+Removing design 'controller'
+Removing design 'axi_stream_slave'
+Removing design 'datapath_channel'
+Removing design 'axi_stream_master'
+Removing design 'contrast_LUT'
+Removing design 'gamma_LUT'
+Removing design 'contrast'
+Removing design 'shifter'
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/pkg.sv}
+Loading sverilog file '/users/epttsm/Project/design/pkg.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/pkg.sv
+Warning:  /users/epttsm/Project/design/pkg.sv:9: The package pkg has already been analyzed. It is being replaced. (VER-26)
+Warning:  /users/epttsm/Project/design/pkg.sv:12: Parameter keyword used in local parameter declaration. (VER-329)
+No designs were read
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/pkg.sv}
+Loading sverilog file '/users/epttsm/Project/design/pkg.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/pkg.sv
+Warning:  /users/epttsm/Project/design/pkg.sv:9: The package pkg has already been analyzed. It is being replaced. (VER-26)
+Warning:  /users/epttsm/Project/design/pkg.sv:12: Parameter keyword used in local parameter declaration. (VER-329)
+No designs were read
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/brightness.sv}
+Loading sverilog file '/users/epttsm/Project/design/brightness.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/brightness.sv
+Warning:  /users/epttsm/Project/design/brightness.sv:49: signed to unsigned conversion occurs. (VER-318)
+Warning:  /users/epttsm/Project/design/brightness.sv:58: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+        in routine brightness line 32 in file
+                '/users/epttsm/Project/design/brightness.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| color_out_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    color_out_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/brightness.db:brightness'
+Loaded 1 design.
+Current design is 'brightness'.
+design_vision> 
+Current design is 'brightness'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/brightness.sv}
+Loading sverilog file '/users/epttsm/Project/design/brightness.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/brightness.sv
+Warning:  /users/epttsm/Project/design/brightness.sv:49: signed to unsigned conversion occurs. (VER-318)
+Warning:  /users/epttsm/Project/design/brightness.sv:58: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+        in routine brightness line 32 in file
+                '/users/epttsm/Project/design/brightness.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| color_out_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    color_out_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/brightness.db:brightness'
+Warning: Overwriting design file '/users/epttsm/Project/design/brightness.db'. (DDB-24)
+Loaded 1 design.
+Current design is 'brightness'.
+brightness
+Current design is 'brightness'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/shifter.sv}
+Loading sverilog file '/users/epttsm/Project/design/shifter.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/shifter.sv
+
+Statistics for case statements in always block at line 24 in file
+        '/users/epttsm/Project/design/shifter.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            29            |    auto/auto     |
+|            38            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/shifter.db:shifter'
+Loaded 1 design.
+Current design is 'shifter'.
+shifter
+Current design is 'shifter'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/contrast.sv}
+Loading sverilog file '/users/epttsm/Project/design/contrast.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/contrast.sv
+Warning:  /users/epttsm/Project/design/contrast.sv:51: unsigned to signed assignment occurs. (VER-318)
+Warning:  /users/epttsm/Project/design/contrast.sv:54: unsigned to signed assignment occurs. (VER-318)
+Warning:  /users/epttsm/Project/design/contrast.sv:61: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+        in routine contrast line 69 in file
+                '/users/epttsm/Project/design/contrast.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| color_out_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    color_out_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/contrast.db:contrast'
+Loaded 1 design.
+Current design is 'contrast'.
+contrast
+Current design is 'contrast'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/axi_lite.sv}
+Loading sverilog file '/users/epttsm/Project/design/axi_lite.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/axi_lite.sv
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/axi_lite.db:axi_lite'
+Loaded 1 design.
+Current design is 'axi_lite'.
+axi_lite
+Current design is 'axi_lite'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/controller.sv}
+Loading sverilog file '/users/epttsm/Project/design/controller.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/controller.sv
+Warning:  /users/epttsm/Project/design/controller.sv:75: unsigned to signed assignment occurs. (VER-318)
+Warning:  /users/epttsm/Project/design/controller.sv:150: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 94 in file
+        '/users/epttsm/Project/design/controller.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           105            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 133 in file
+        '/users/epttsm/Project/design/controller.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           142            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine controller line 52 in file
+                '/users/epttsm/Project/design/controller.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      c_en_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      b_en_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      g_en_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine controller line 66 in file
+                '/users/epttsm/Project/design/controller.sv'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| brightness_param_reg | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/controller.db:controller'
+Loaded 1 design.
+Current design is 'controller'.
+controller
+Current design is 'controller'.
+design_vision> contrast_LU
+Error: unknown command 'contrast_LU' (CMD-005)
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/contrast_LUT.sv}
+Loading sverilog file '/users/epttsm/Project/design/contrast_LUT.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/contrast_LUT.sv
+
+Statistics for case statements in always block at line 36 in file
+        '/users/epttsm/Project/design/contrast_LUT.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            39            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine contrast_LUT line 24 in file
+                '/users/epttsm/Project/design/contrast_LUT.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   contrast_fp_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    cp_param_reg     | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/contrast_LUT.db:contrast_LUT'
+Loaded 1 design.
+Current design is 'contrast_LUT'.
+contrast_LUT
+Current design is 'contrast_LUT'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/gamma_LUT.sv}
+Loading sverilog file '/users/epttsm/Project/design/gamma_LUT.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/gamma_LUT.sv
+
+Inferred memory devices in process
+        in routine gamma_LUT line 51 in file
+                '/users/epttsm/Project/design/gamma_LUT.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| color_out_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  reg_color_out_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/gamma_LUT.db:gamma_LUT'
+Loaded 1 design.
+Current design is 'gamma_LUT'.
+gamma_LUT
+Current design is 'gamma_LUT'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/datapath_channel.sv}
+Loading sverilog file '/users/epttsm/Project/design/datapath_channel.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/datapath_channel.sv
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/datapath_channel.db:datapath_channel'
+Loaded 1 design.
+Current design is 'datapath_channel'.
+datapath_channel
+Current design is 'datapath_channel'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/axi_stream_master.sv}
+Loading sverilog file '/users/epttsm/Project/design/axi_stream_master.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/axi_stream_master.sv
+
+Inferred memory devices in process
+        in routine axi_stream_master line 45 in file
+                '/users/epttsm/Project/design/axi_stream_master.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     TVALID_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   reg_rgb_out_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/axi_stream_master.db:axi_stream_master'
+Loaded 1 design.
+Current design is 'axi_stream_master'.
+axi_stream_master
+Current design is 'axi_stream_master'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/axi_stream_slave.sv}
+Loading sverilog file '/users/epttsm/Project/design/axi_stream_slave.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/axi_stream_slave.sv
+
+Inferred memory devices in process
+        in routine axi_stream_slave line 31 in file
+                '/users/epttsm/Project/design/axi_stream_slave.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     TREADY_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine axi_stream_slave line 46 in file
+                '/users/epttsm/Project/design/axi_stream_slave.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    rgb_valid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   reg_rgb_out_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/axi_stream_slave.db:axi_stream_slave'
+Loaded 1 design.
+Current design is 'axi_stream_slave'.
+axi_stream_slave
+Current design is 'axi_stream_slave'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/top.sv}
+Loading sverilog file '/users/epttsm/Project/design/top.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/top.sv
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/top.db:top'
+Loaded 1 design.
+Current design is 'top'.
+top
+Current design is 'top'.
+design_vision> elaborate  -library WORK -update
+Error: Required argument 'design_name' was not found (CMD-007)
+design_vision> 
+Warning: Design 'top' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'top' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'top' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'top' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'top' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+design_vision> create_clock -name "up_ACLK" -period 10 -waveform {0 5} clk
+Warning: Can't find object 'clk' in design 'top'. (UID-95)
+Error: Value for list 'source_objects' must have 1 elements. (CMD-036)
+0
+design_vision> create_clock -name "up_ACLK" -period 10 -waveform {0 5} up_ACLK
+Warning: Design 'top' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+design_vision> link
+  Linking design 'top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (12 designs)              /users/epttsm/Project/design/top.db, etc
+  tsl18fs120_typ (library)    /tools/kits/tower/PDK_TS18SL/FS120_STD_Cells_0_18um_2005_12/DW_TOWER_tsl18fs120/2005.12/synopsys/2004.12/models/tsl18fs120_typ.db
+  dw_foundation.sldb (library) /eda/synopsys/2020-21/RHELx86/SYN_2020.09-SP2/libraries/syn/dw_foundation.sldb
+
+Error: Width mismatch on port 'data_rd2_out' of reference to 'DW_ram_2r_w_s_dff' in 'refs'. (LINK-3)
+Information: Building the design 'DW_ram_2r_w_s_dff' instantiated from design 'gamma_LUT' with
+        the parameters "data_width=8,depth=256,rst_mode=0". (HDL-193)
+Warning: Cannot find the design 'DW_ram_2r_w_s_dff' in the library 'WORK'. (LBR-1)
+Warning: Unable to resolve reference 'DW_ram_2r_w_s_dff' in 'gamma_LUT'. (LINK-5)
+Warning: Design 'contrast_LUT.db:contrast_LUT' comes before design 'contrast_LUT.db:contrast_LUT' in the link_library; 'contrast_LUT.db:contrast_LUT' will be ignored. (UIO-92)
+Information: Design 'contrast_LUT' is referenced in design 'controller.db:controller_inst'. (UIO-93)
+0
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/gamma_LUT.sv}
+Loading sverilog file '/users/epttsm/Project/design/gamma_LUT.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/gamma_LUT.sv
+
+Inferred memory devices in process
+        in routine gamma_LUT line 51 in file
+                '/users/epttsm/Project/design/gamma_LUT.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| color_out_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  reg_color_out_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/gamma_LUT.db:gamma_LUT'
+Warning: Overwriting design file '/users/epttsm/Project/design/gamma_LUT.db'. (DDB-24)
+Loaded 1 design.
+Current design is 'gamma_LUT'.
+gamma_LUT
+Current design is 'gamma_LUT'.
+design_vision> link
+  Linking design 'gamma_LUT'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (12 designs)              /users/epttsm/Project/design/gamma_LUT.db, etc
+  tsl18fs120_typ (library)    /tools/kits/tower/PDK_TS18SL/FS120_STD_Cells_0_18um_2005_12/DW_TOWER_tsl18fs120/2005.12/synopsys/2004.12/models/tsl18fs120_typ.db
+  dw_foundation.sldb (library) /eda/synopsys/2020-21/RHELx86/SYN_2020.09-SP2/libraries/syn/dw_foundation.sldb
+
+1
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/pkg.sv}
+Loading sverilog file '/users/epttsm/Project/design/pkg.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/pkg.sv
+Warning:  /users/epttsm/Project/design/pkg.sv:9: The package pkg has already been analyzed. It is being replaced. (VER-26)
+Warning:  /users/epttsm/Project/design/pkg.sv:12: Parameter keyword used in local parameter declaration. (VER-329)
+No designs were read
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/brightness.sv}
+Loading sverilog file '/users/epttsm/Project/design/brightness.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/brightness.sv
+Warning:  /users/epttsm/Project/design/brightness.sv:49: signed to unsigned conversion occurs. (VER-318)
+Warning:  /users/epttsm/Project/design/brightness.sv:58: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+        in routine brightness line 32 in file
+                '/users/epttsm/Project/design/brightness.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| color_out_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    color_out_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/brightness.db:brightness'
+Warning: Overwriting design file '/users/epttsm/Project/design/brightness.db'. (DDB-24)
+Loaded 1 design.
+Current design is 'brightness'.
+brightness
+Current design is 'brightness'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/shifter.sv}
+Loading sverilog file '/users/epttsm/Project/design/shifter.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/shifter.sv
+
+Statistics for case statements in always block at line 24 in file
+        '/users/epttsm/Project/design/shifter.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            29            |    auto/auto     |
+|            38            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/shifter.db:shifter'
+Warning: Overwriting design file '/users/epttsm/Project/design/shifter.db'. (DDB-24)
+Loaded 1 design.
+Current design is 'shifter'.
+shifter
+Current design is 'shifter'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/contrast.sv}
+Loading sverilog file '/users/epttsm/Project/design/contrast.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/contrast.sv
+Warning:  /users/epttsm/Project/design/contrast.sv:51: unsigned to signed assignment occurs. (VER-318)
+Warning:  /users/epttsm/Project/design/contrast.sv:54: unsigned to signed assignment occurs. (VER-318)
+Warning:  /users/epttsm/Project/design/contrast.sv:61: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+        in routine contrast line 69 in file
+                '/users/epttsm/Project/design/contrast.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| color_out_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    color_out_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/contrast.db:contrast'
+Warning: Overwriting design file '/users/epttsm/Project/design/contrast.db'. (DDB-24)
+Loaded 1 design.
+Current design is 'contrast'.
+contrast
+Current design is 'contrast'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/axi_lite.sv}
+Loading sverilog file '/users/epttsm/Project/design/axi_lite.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/axi_lite.sv
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/axi_lite.db:axi_lite'
+Warning: Overwriting design file '/users/epttsm/Project/design/axi_lite.db'. (DDB-24)
+Loaded 1 design.
+Current design is 'axi_lite'.
+axi_lite
+Current design is 'axi_lite'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/controller.sv}
+Loading sverilog file '/users/epttsm/Project/design/controller.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/controller.sv
+Warning:  /users/epttsm/Project/design/controller.sv:75: unsigned to signed assignment occurs. (VER-318)
+Warning:  /users/epttsm/Project/design/controller.sv:150: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 94 in file
+        '/users/epttsm/Project/design/controller.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           105            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 133 in file
+        '/users/epttsm/Project/design/controller.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           142            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine controller line 52 in file
+                '/users/epttsm/Project/design/controller.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      c_en_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      b_en_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      g_en_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine controller line 66 in file
+                '/users/epttsm/Project/design/controller.sv'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| brightness_param_reg | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/controller.db:controller'
+Warning: Overwriting design file '/users/epttsm/Project/design/controller.db'. (DDB-24)
+Loaded 1 design.
+Current design is 'controller'.
+controller
+Current design is 'controller'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/contrast_LUT.sv}
+Loading sverilog file '/users/epttsm/Project/design/contrast_LUT.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/contrast_LUT.sv
+
+Statistics for case statements in always block at line 36 in file
+        '/users/epttsm/Project/design/contrast_LUT.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            39            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine contrast_LUT line 24 in file
+                '/users/epttsm/Project/design/contrast_LUT.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   contrast_fp_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    cp_param_reg     | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/contrast_LUT.db:contrast_LUT'
+Warning: Overwriting design file '/users/epttsm/Project/design/contrast_LUT.db'. (DDB-24)
+Loaded 1 design.
+Current design is 'contrast_LUT'.
+contrast_LUT
+Current design is 'contrast_LUT'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/gamma_LUT.sv}
+Loading sverilog file '/users/epttsm/Project/design/gamma_LUT.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/gamma_LUT.sv
+
+Inferred memory devices in process
+        in routine gamma_LUT line 51 in file
+                '/users/epttsm/Project/design/gamma_LUT.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| color_out_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  reg_color_out_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/gamma_LUT.db:gamma_LUT'
+Warning: Overwriting design file '/users/epttsm/Project/design/gamma_LUT.db'. (DDB-24)
+Loaded 1 design.
+Current design is 'gamma_LUT'.
+gamma_LUT
+Current design is 'gamma_LUT'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/datapath_channel.sv}
+Loading sverilog file '/users/epttsm/Project/design/datapath_channel.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/datapath_channel.sv
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/datapath_channel.db:datapath_channel'
+Warning: Overwriting design file '/users/epttsm/Project/design/datapath_channel.db'. (DDB-24)
+Loaded 1 design.
+Current design is 'datapath_channel'.
+datapath_channel
+Current design is 'datapath_channel'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/axi_stream_master.sv}
+Loading sverilog file '/users/epttsm/Project/design/axi_stream_master.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/axi_stream_master.sv
+
+Inferred memory devices in process
+        in routine axi_stream_master line 45 in file
+                '/users/epttsm/Project/design/axi_stream_master.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     TVALID_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   reg_rgb_out_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/axi_stream_master.db:axi_stream_master'
+Warning: Overwriting design file '/users/epttsm/Project/design/axi_stream_master.db'. (DDB-24)
+Loaded 1 design.
+Current design is 'axi_stream_master'.
+axi_stream_master
+Current design is 'axi_stream_master'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/axi_stream_slave.sv}
+Loading sverilog file '/users/epttsm/Project/design/axi_stream_slave.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/axi_stream_slave.sv
+
+Inferred memory devices in process
+        in routine axi_stream_slave line 31 in file
+                '/users/epttsm/Project/design/axi_stream_slave.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     TREADY_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine axi_stream_slave line 46 in file
+                '/users/epttsm/Project/design/axi_stream_slave.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    rgb_valid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   reg_rgb_out_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/axi_stream_slave.db:axi_stream_slave'
+Warning: Overwriting design file '/users/epttsm/Project/design/axi_stream_slave.db'. (DDB-24)
+Loaded 1 design.
+Current design is 'axi_stream_slave'.
+axi_stream_slave
+Current design is 'axi_stream_slave'.
+design_vision> read_file -format sverilog {/users/epttsm/Project/design/top.sv}
+Loading sverilog file '/users/epttsm/Project/design/top.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /users/epttsm/Project/design/top.sv
+Presto compilation completed successfully.
+Current design is now '/users/epttsm/Project/design/top.db:top'
+Warning: Overwriting design file '/users/epttsm/Project/design/top.db'. (DDB-24)
+Loaded 1 design.
+Current design is 'top'.
+top
+Current design is 'top'.
+design_vision> create_clock -name "up_ACLK" -period 10 -waveform {0 5} up_ACLK
+1
+design_vision> create_clock -name "ACLK" -period 20 -waveform {0 10} ACLK
+1
+design_vision> compile -exact_map
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | R-2020.09-DWBB_202009.2 |     *     |
+| Licensed DW Building Blocks        | R-2020.09-DWBB_202009.2 |     *     |
+============================================================================
+
+
+Information: There are 153 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'axi_stream_master'
+  Processing 'brightness_0'
+  Processing 'shifter_0'
+  Processing 'contrast_0'
+  Processing 'gamma_LUT_0'
+  Processing 'datapath_channel_0'
+  Processing 'axi_stream_slave'
+  Processing 'contrast_LUT'
+Information: The register 'contrast_fp_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'contrast_fp_reg[6]' is a constant and will be removed. (OPT-1206)
+  Processing 'controller'
+  Processing 'axi_lite'
+  Processing 'top'
+Warning: Design 'contrast_LUT.db:contrast_LUT' comes before design 'contrast_LUT.db:contrast_LUT' in the link_library; 'contrast_LUT.db:contrast_LUT' will be ignored. (UIO-92)
+Information: Design 'contrast_LUT' is referenced in design 'controller.db:controller_inst'. (UIO-93)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'brightness_1_DW01_add_0'
+  Processing 'contrast_1_DW01_add_0_DW01_add_1'
+  Processing 'contrast_1_DW01_sub_0_DW01_sub_2'
+  Allocating blocks in 'DW_ram_2r_w_s_dff_data_width8_depth256_rst_mode0'
+  Processing 'gamma_LUT_1_DW_ram_2r_w_s_dff_0'
+  Processing 'brightness_2_DW01_add_0_DW01_add_2'
+  Processing 'contrast_2_DW01_add_0_DW01_add_3'
+  Processing 'contrast_2_DW01_sub_0_DW01_sub_3'
+  Processing 'gamma_LUT_2_DW_ram_2r_w_s_dff_0_DW_ram_2r_w_s_dff_1'
+  Processing 'brightness_3_DW01_add_0_DW01_add_4'
+  Processing 'contrast_3_DW01_add_0_DW01_add_5'
+  Processing 'contrast_3_DW01_sub_0_DW01_sub_4'
+  Processing 'gamma_LUT_3_DW_ram_2r_w_s_dff_0_DW_ram_2r_w_s_dff_2'
+  Processing 'brightness_0_DW01_add_0_DW01_add_6'
+  Processing 'contrast_0_DW01_add_0_DW01_add_7'
+  Processing 'contrast_0_DW01_sub_0_DW01_sub_5'
+  Processing 'gamma_LUT_0_DW_ram_2r_w_s_dff_0_DW_ram_2r_w_s_dff_3'
+  Allocating blocks in 'DW_fifo_s2_sf_width16_depth4_push_ae_lvl2_push_af_lvl2_pop_ae_lvl2_pop_af_lvl2_err_mode1_push_sync2_pop_sync2_rst_mode0'
+  Allocating blocks in 'DW_ram_r_w_s_dff_data_width16_depth4_rst_mode0'
+  Processing 'axi_lite_DW_fifoctl_s2_sf_1'
+  Processing 'axi_lite_DW_FIFOCTL_IF_2'
+  Processing 'axi_lite_DW_sync_2'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Mapping 'DW_inc'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Processing 'axi_lite_DW_FIFOCTL_IF_3'
+  Processing 'axi_lite_DW_sync_3'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Mapping 'DW_inc'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Processing 'axi_lite_DW_ram_r_w_s_dff_1'
+  Allocating blocks in 'DW_fifo_s2_sf_width18_depth4_push_ae_lvl2_push_af_lvl2_pop_ae_lvl2_pop_af_lvl2_err_mode1_push_sync2_pop_sync2_rst_mode0'
+  Allocating blocks in 'DW_ram_r_w_s_dff_data_width18_depth4_rst_mode0'
+  Processing 'axi_lite_DW_fifoctl_s2_sf_2'
+  Processing 'axi_lite_DW_FIFOCTL_IF_4'
+  Processing 'axi_lite_DW_sync_4'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Mapping 'DW_inc'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Processing 'axi_lite_DW_FIFOCTL_IF_5'
+  Processing 'axi_lite_DW_sync_5'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Mapping 'DW_inc'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Processing 'axi_lite_DW_ram_r_w_s_dff_2'
+  Processing 'axi_lite_DW_fifoctl_s2_sf_3'
+  Processing 'axi_lite_DW_FIFOCTL_IF_6'
+  Processing 'axi_lite_DW_sync_6'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Mapping 'DW_inc'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Processing 'axi_lite_DW_FIFOCTL_IF_7'
+  Processing 'axi_lite_DW_sync_7'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Mapping 'DW_inc'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Processing 'axi_lite_DW_ram_r_w_s_dff_3'
+  Processing 'axi_lite_DW_fifoctl_s2_sf_4'
+  Processing 'axi_lite_DW_FIFOCTL_IF_8'
+  Processing 'axi_lite_DW_sync_8'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Mapping 'DW_inc'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Processing 'axi_lite_DW_FIFOCTL_IF_9'
+  Processing 'axi_lite_DW_sync_9'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Mapping 'DW_inc'
+  Processing 'mselector_n2_m3'
+  Processing 'mselector_n2_m3'
+  Processing 'axi_lite_DW_ram_r_w_s_dff_4'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:31  111246.0     29.80    2084.3   78595.7                          
+    0:00:31  111246.0     29.80    2084.3   78595.7                          
+    0:00:36  115728.8      0.00       0.0     237.7                          
+    0:00:36  115728.8      0.00       0.0     237.7                          
+    0:00:36  115728.8      0.00       0.0     237.7                          
+    0:00:36  115728.8      0.00       0.0     237.7                          
+    0:00:36  115728.8      0.00       0.0     237.7                          
+    0:00:39   89338.2      0.00       0.0      43.7                          
+    0:00:39   89332.0      0.00       0.0      43.7                          
+    0:00:40   89332.0      0.00       0.0      43.7                          
+    0:00:40   89332.0      0.00       0.0      43.7                          
+    0:00:40   89332.0      0.00       0.0      43.7                          
+    0:00:40   89332.0      0.00       0.0      43.7                          
+    0:00:40   89332.0      0.00       0.0      27.6                          
+    0:00:40   89332.0      0.00       0.0      11.5                          
+    0:00:40   89332.0      0.00       0.0       5.7                          
+    0:00:40   89332.0      0.00       0.0       0.4                          
+    0:00:41   89332.0      0.00       0.0       0.0                          
+    0:00:41   89332.0      0.00       0.0       0.0                          
+    0:00:41   89332.0      0.00       0.0       0.0                          
+    0:00:41   89332.0      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:41   89332.0      0.00       0.0       0.0                          
+    0:00:41   89332.0      0.00       0.0       0.0                          
+    0:00:41   89332.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:41   89332.0      0.00       0.0       0.0                          
+    0:00:41   89332.0      0.00       0.0       0.0                          
+    0:00:50   89216.5      0.00       0.0      69.4                          
+    0:00:51   89011.0      0.00       0.0      69.4                          
+    0:00:51   88904.8      0.00       0.0      69.4                          
+    0:00:51   88904.8      0.00       0.0      69.4                          
+    0:00:51   88904.8      0.00       0.0      69.4                          
+    0:00:51   88904.8      0.00       0.0      69.4                          
+    0:00:52   88906.2      0.00       0.0      60.2 datapath_channel_G/gamma_LUT_inst/DW_ram_2r_w_s_dff_inst/net43705
+    0:00:52   88909.2      0.00       0.0      45.1 datapath_channel_R/gamma_LUT_inst/DW_ram_2r_w_s_dff_inst/net44779
+    0:00:52   88911.8      0.00       0.0      37.6 datapath_channel_B/gamma_LUT_inst/DW_ram_2r_w_s_dff_inst/net41943
+    0:00:52   88914.8      0.00       0.0      30.3 datapath_channel_R/gamma_LUT_inst/DW_ram_2r_w_s_dff_inst/net44431
+    0:00:52   88917.2      0.00       0.0      25.3 datapath_channel_G/gamma_LUT_inst/DW_ram_2r_w_s_dff_inst/net42995
+    0:00:52   88919.8      0.00       0.0      20.3 datapath_channel_B/gamma_LUT_inst/DW_ram_2r_w_s_dff_inst/net41423
+    0:00:52   88922.8      0.00       0.0      13.3 datapath_channel_M/gamma_LUT_inst/DW_ram_2r_w_s_dff_inst/net40147
+    0:00:52   88925.8      0.00       0.0       7.0 datapath_channel_G/gamma_LUT_inst/DW_ram_2r_w_s_dff_inst/net43187
+    0:00:52   88927.8      0.00       0.0       3.8 datapath_channel_B/gamma_LUT_inst/DW_ram_2r_w_s_dff_inst/net41759
+    0:00:53   88929.8      0.00       0.0       0.0                          
+    0:00:53   88929.8      0.00       0.0       0.0                          
+    0:00:53   88929.8      0.00       0.0       0.0                          
+    0:00:53   88929.8      0.00       0.0       0.0                          
+    0:00:53   88929.8      0.00       0.0       0.0                          
+    0:00:53   88929.8      0.00       0.0       0.0                          
+    0:00:53   88929.8      0.00       0.0       0.0                          
+Loading db file '/tools/kits/tower/PDK_TS18SL/FS120_STD_Cells_0_18um_2005_12/DW_TOWER_tsl18fs120/2005.12/synopsys/2004.12/models/tsl18fs120_typ.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'top' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'datapath_channel_M/gamma_LUT_inst/DW_ram_2r_w_s_dff_inst/data_in[0]': 2167 load(s), 1 driver(s)
+     Net 'axi_lite_inst/write_addr_fifo/U1/U2/clk': 8540 load(s), 1 driver(s)
+1
+Current design is 'top'.
+design_vision> uplevel #0 check_design
+ 
+****************************************
+check_design summary:
+Version:     R-2020.09-SP2
+Date:        Sun Jan 22 15:29:05 2023
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                    544
+    Unconnected ports (LINT-28)                                   471
+    Feedthrough (LINT-29)                                           4
+    Shorted outputs (LINT-31)                                       1
+    Constant outputs (LINT-52)                                     68
+
+Cells                                                             161
+    Connected to power or ground (LINT-32)                        142
+    Nets connected to multiple pins on same cell (LINT-33)         19
+--------------------------------------------------------------------------------
+
+Warning: In design 'controller', port 'paddr[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'paddr[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'paddr[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'paddr[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'paddr[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'paddr[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'paddr[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'paddr[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'paddr[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'paddr[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'paddr[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'paddr[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'raddr[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'raddr[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'raddr[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'raddr[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'raddr[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'raddr[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'raddr[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'raddr[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'raddr[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'raddr[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'raddr[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller', port 'raddr[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_0', port 'push_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_0', port 'push_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_0', port 'push_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_0', port 'push_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_0', port 'push_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_0', port 'pop_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_0', port 'pop_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_0', port 'pop_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_0', port 'pop_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_0', port 'pop_error' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_LUT', port 'pdata[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_LUT', port 'pdata[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_LUT', port 'pdata[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_LUT', port 'pdata[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_LUT', port 'pdata[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_LUT', port 'pdata[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_LUT', port 'pdata[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_LUT', port 'pdata[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'raddr[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'raddr[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'raddr[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'raddr[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'raddr[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'raddr[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'raddr[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'raddr[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'paddr[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'paddr[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'paddr[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'paddr[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'paddr[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'paddr[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'paddr[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'paddr[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'pdata[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'pdata[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'pdata[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'pdata[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'pdata[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'pdata[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'pdata[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_0', port 'pdata[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'push_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'push_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'push_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'push_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'push_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'pop_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'pop_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'pop_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'pop_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'pop_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'push_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'push_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'push_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'pop_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'pop_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'pop_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', port 'test' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'init_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'almost_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'half_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'almost_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'next_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'next_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'next_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'next_empty_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'next_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'next_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_0', port 'test' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'init_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'almost_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'half_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'almost_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'next_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'next_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'next_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'next_empty_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'next_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'next_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_1', port 'test' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'raddr[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'raddr[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'raddr[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'raddr[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'raddr[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'raddr[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'raddr[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'raddr[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'paddr[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'paddr[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'paddr[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'paddr[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'paddr[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'paddr[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'paddr[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'paddr[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'pdata[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'pdata[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'pdata[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'pdata[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'pdata[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'pdata[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'pdata[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_1', port 'pdata[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'raddr[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'raddr[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'raddr[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'raddr[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'raddr[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'raddr[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'raddr[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'raddr[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'paddr[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'paddr[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'paddr[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'paddr[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'paddr[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'paddr[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'paddr[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'paddr[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'pdata[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'pdata[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'pdata[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'pdata[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'pdata[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'pdata[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'pdata[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_2', port 'pdata[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'raddr[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'raddr[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'raddr[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'raddr[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'raddr[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'raddr[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'raddr[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'raddr[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'paddr[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'paddr[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'paddr[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'paddr[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'paddr[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'paddr[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'paddr[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'paddr[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'pdata[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'pdata[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'pdata[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'pdata[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'pdata[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'pdata[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'pdata[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gamma_LUT_3', port 'pdata[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'brightness_1_DW01_add_0', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'brightness_1_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'brightness_1_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_1_DW01_add_0_DW01_add_1', port 'A[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_1_DW01_add_0_DW01_add_1', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_1_DW01_add_0_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_1_DW01_add_0_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_1_DW01_sub_0_DW01_sub_2', port 'A[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_1_DW01_sub_0_DW01_sub_2', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_1_DW01_sub_0_DW01_sub_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_1_DW01_sub_0_DW01_sub_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'brightness_2_DW01_add_0_DW01_add_2', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'brightness_2_DW01_add_0_DW01_add_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'brightness_2_DW01_add_0_DW01_add_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_2_DW01_add_0_DW01_add_3', port 'A[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_2_DW01_add_0_DW01_add_3', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_2_DW01_add_0_DW01_add_3', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_2_DW01_add_0_DW01_add_3', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_2_DW01_sub_0_DW01_sub_3', port 'A[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_2_DW01_sub_0_DW01_sub_3', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_2_DW01_sub_0_DW01_sub_3', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_2_DW01_sub_0_DW01_sub_3', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'brightness_3_DW01_add_0_DW01_add_4', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'brightness_3_DW01_add_0_DW01_add_4', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'brightness_3_DW01_add_0_DW01_add_4', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_3_DW01_add_0_DW01_add_5', port 'A[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_3_DW01_add_0_DW01_add_5', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_3_DW01_add_0_DW01_add_5', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_3_DW01_add_0_DW01_add_5', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_3_DW01_sub_0_DW01_sub_4', port 'A[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_3_DW01_sub_0_DW01_sub_4', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_3_DW01_sub_0_DW01_sub_4', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_3_DW01_sub_0_DW01_sub_4', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'brightness_0_DW01_add_0_DW01_add_6', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'brightness_0_DW01_add_0_DW01_add_6', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'brightness_0_DW01_add_0_DW01_add_6', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_0_DW01_add_0_DW01_add_7', port 'A[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_0_DW01_add_0_DW01_add_7', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_0_DW01_add_0_DW01_add_7', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_0_DW01_add_0_DW01_add_7', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_0_DW01_sub_0_DW01_sub_5', port 'A[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_0_DW01_sub_0_DW01_sub_5', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_0_DW01_sub_0_DW01_sub_5', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'contrast_0_DW01_sub_0_DW01_sub_5', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_1', port 'push_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_1', port 'push_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_1', port 'push_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_1', port 'push_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_1', port 'push_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_1', port 'pop_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_1', port 'pop_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_1', port 'pop_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_1', port 'pop_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_1', port 'pop_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'push_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'push_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'push_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'push_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'push_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'pop_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'pop_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'pop_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'pop_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'pop_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'push_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'push_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'push_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'pop_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'pop_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'pop_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', port 'test' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'init_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'almost_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'half_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'almost_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'next_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'next_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'next_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'next_empty_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'next_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'next_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_2', port 'test' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'init_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'almost_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'half_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'almost_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'next_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'next_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'next_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'next_empty_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'next_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'next_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_3', port 'test' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_ram_r_w_s_dff_1', port 'cs_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_2', port 'push_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_2', port 'push_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_2', port 'push_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_2', port 'push_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_2', port 'push_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_2', port 'pop_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_2', port 'pop_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_2', port 'pop_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_2', port 'pop_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_2', port 'pop_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'push_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'push_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'push_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'push_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'push_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'pop_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'pop_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'pop_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'pop_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'pop_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'push_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'push_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'push_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'pop_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'pop_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'pop_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', port 'test' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'init_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'almost_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'half_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'almost_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'next_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'next_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'next_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'next_empty_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'next_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'next_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_4', port 'test' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'init_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'almost_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'half_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'almost_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'next_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'next_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'next_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'next_empty_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'next_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'next_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_5', port 'test' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_ram_r_w_s_dff_2', port 'cs_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_3', port 'push_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_3', port 'push_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_3', port 'push_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_3', port 'push_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_3', port 'push_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_3', port 'pop_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_3', port 'pop_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_3', port 'pop_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_3', port 'pop_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_3', port 'pop_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'push_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'push_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'push_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'push_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'push_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'pop_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'pop_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'pop_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'pop_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'pop_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'push_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'push_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'push_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'pop_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'pop_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'pop_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', port 'test' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'init_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'almost_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'half_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'almost_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'next_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'next_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'next_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'next_empty_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'next_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'next_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_6', port 'test' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'init_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'almost_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'half_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'almost_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'next_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'next_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'next_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'next_empty_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'next_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'next_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_7', port 'test' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_ram_r_w_s_dff_3', port 'cs_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_4', port 'push_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_4', port 'push_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_4', port 'push_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_4', port 'push_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_4', port 'push_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_4', port 'pop_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_4', port 'pop_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_4', port 'pop_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_4', port 'pop_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifo_s2_sf_4', port 'pop_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'push_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'push_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'push_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'push_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'push_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'pop_ae' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'pop_hf' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'pop_af' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'pop_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'pop_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'push_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'push_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'push_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'pop_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'pop_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'pop_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', port 'test' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'init_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'almost_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'half_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'almost_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'next_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'next_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'next_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'next_empty_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'next_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'next_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_8', port 'test' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'init_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'almost_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'half_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'almost_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'next_word_count[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'next_word_count[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'next_word_count[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'next_empty_n' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'next_full' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'next_error' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_FIFOCTL_IF_9', port 'test' is not connected to any nets. (LINT-28)
+Warning: In design 'axi_lite_DW_ram_r_w_s_dff_4', port 'cs_n' is not connected to any nets. (LINT-28)
+Warning: In design 'top', input port 'up_ACLK' is connected directly to output port 'down_ACLK'. (LINT-29)
+Warning: In design 'top', input port 'up_ARESETn' is connected directly to output port 'down_ARESETn'. (LINT-29)
+Warning: In design 'controller', input port 'pvalid' is connected directly to output port 'cwresp_valid'. (LINT-29)
+Warning: In design 'controller', input port 'raddr_valid' is connected directly to output port 'crresp_valid'. (LINT-29)
+Warning: In design 'controller', output port 'cwresp[0]' is connected directly to output port 'crresp[0]'. (LINT-31)
+Warning: In design 'top', a pin on submodule 'axi_lite_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cwresp[0]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'axi_lite_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'crresp[0]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'controller_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to_read[15]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'controller_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to_read[14]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'controller_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to_read[13]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'controller_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to_read[12]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'controller_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to_read[11]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'controller_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to_read[10]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'controller_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to_read[9]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'controller_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to_read[8]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'params_resetN' is connected to logic 1. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_write_en_n' is connected to logic 1. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'g_en' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'c_en' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b_en' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[15]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[14]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[13]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[12]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[11]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[10]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[9]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[8]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[7]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[6]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[5]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[4]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[3]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[2]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[1]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from[0]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[15]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[14]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[13]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[12]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[11]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[10]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[9]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[8]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[7]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[6]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[5]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[4]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[3]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[2]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[1]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_to[0]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cp_param[sign]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cp_param[shifter_b][dir][1]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cp_param[shifter_b][dir][0]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cp_param[shifter_b][val][1]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cp_param[shifter_b][val][0]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cp_param[shifter_a][dir][1]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cp_param[shifter_a][dir][0]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cp_param[shifter_a][val][1]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cp_param[shifter_a][val][0]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'brightness_param[8]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'brightness_param[7]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'brightness_param[6]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'brightness_param[5]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'brightness_param[4]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'brightness_param[3]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'brightness_param[2]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'brightness_param[1]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'brightness_param[0]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[15]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[14]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[13]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[12]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[11]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[10]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[9]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[8]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[7]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[6]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[5]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[4]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[3]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[2]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[1]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'datapath_channel_M' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'glut_from_read[0]' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifo_s2_sf_0', a pin on submodule 'U1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'test' is connected to logic 0. 
+Warning: In design 'contrast_0', a pin on submodule 'add_54' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[10]' is connected to logic 0. 
+Warning: In design 'contrast_0', a pin on submodule 'add_54' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'contrast_0', a pin on submodule 'add_54' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'contrast_0', a pin on submodule 'sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[10]' is connected to logic 0. 
+Warning: In design 'contrast_0', a pin on submodule 'sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'contrast_0', a pin on submodule 'sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'brightness_0', a pin on submodule 'add_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'brightness_0', a pin on submodule 'add_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', a pin on submodule 'U1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'init_n' is connected to logic 1. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', a pin on submodule 'U1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'test' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', a pin on submodule 'U2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'init_n' is connected to logic 1. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_0', a pin on submodule 'U2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'test' is connected to logic 0. 
+Warning: In design 'brightness_1', a pin on submodule 'add_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'brightness_1', a pin on submodule 'add_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'brightness_2', a pin on submodule 'add_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'brightness_2', a pin on submodule 'add_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'brightness_3', a pin on submodule 'add_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'brightness_3', a pin on submodule 'add_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'contrast_1', a pin on submodule 'add_54' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[10]' is connected to logic 0. 
+Warning: In design 'contrast_1', a pin on submodule 'add_54' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'contrast_1', a pin on submodule 'add_54' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'contrast_1', a pin on submodule 'sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[10]' is connected to logic 0. 
+Warning: In design 'contrast_1', a pin on submodule 'sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'contrast_1', a pin on submodule 'sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'contrast_2', a pin on submodule 'add_54' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[10]' is connected to logic 0. 
+Warning: In design 'contrast_2', a pin on submodule 'add_54' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'contrast_2', a pin on submodule 'add_54' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'contrast_2', a pin on submodule 'sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[10]' is connected to logic 0. 
+Warning: In design 'contrast_2', a pin on submodule 'sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'contrast_2', a pin on submodule 'sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'contrast_3', a pin on submodule 'add_54' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[10]' is connected to logic 0. 
+Warning: In design 'contrast_3', a pin on submodule 'add_54' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'contrast_3', a pin on submodule 'add_54' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'contrast_3', a pin on submodule 'sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[10]' is connected to logic 0. 
+Warning: In design 'contrast_3', a pin on submodule 'sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'contrast_3', a pin on submodule 'sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifo_s2_sf_1', a pin on submodule 'U1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'test' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifo_s2_sf_1', a pin on submodule 'U2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cs_n' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', a pin on submodule 'U1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'init_n' is connected to logic 1. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', a pin on submodule 'U1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'test' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', a pin on submodule 'U2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'init_n' is connected to logic 1. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_1', a pin on submodule 'U2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'test' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifo_s2_sf_2', a pin on submodule 'U1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'test' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifo_s2_sf_2', a pin on submodule 'U2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cs_n' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', a pin on submodule 'U1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'init_n' is connected to logic 1. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', a pin on submodule 'U1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'test' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', a pin on submodule 'U2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'init_n' is connected to logic 1. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_2', a pin on submodule 'U2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'test' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifo_s2_sf_3', a pin on submodule 'U1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'test' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifo_s2_sf_3', a pin on submodule 'U2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cs_n' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', a pin on submodule 'U1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'init_n' is connected to logic 1. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', a pin on submodule 'U1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'test' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', a pin on submodule 'U2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'init_n' is connected to logic 1. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_3', a pin on submodule 'U2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'test' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifo_s2_sf_4', a pin on submodule 'U1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'test' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifo_s2_sf_4', a pin on submodule 'U2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cs_n' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', a pin on submodule 'U1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'init_n' is connected to logic 1. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', a pin on submodule 'U1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'test' is connected to logic 0. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', a pin on submodule 'U2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'init_n' is connected to logic 1. 
+Warning: In design 'axi_lite_DW_fifoctl_s2_sf_4', a pin on submodule 'U2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'test' is connected to logic 0. 
+Warning: In design 'top', the same net is connected to more than one pin on submodule 'controller_inst'. (LINT-33)
+   Net 'n2' is connected to pins 'glut_to_read[15]', 'glut_to_read[14]'', 'glut_to_read[13]', 'glut_to_read[12]', 'glut_to_read[11]', 'glut_to_read[10]', 'glut_to_read[9]', 'glut_to_read[8]'.
+Warning: In design 'top', the same net is connected to more than one pin on submodule 'datapath_channel_M'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'params_resetN', 'glut_write_en_n''.
+Warning: In design 'top', the same net is connected to more than one pin on submodule 'datapath_channel_M'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'g_en', 'c_en'', 'b_en', 'glut_from[15]', 'glut_from[14]', 'glut_from[13]', 'glut_from[12]', 'glut_from[11]', 'glut_from[10]', 'glut_from[9]', 'glut_from[8]', 'glut_from[7]', 'glut_from[6]', 'glut_from[5]', 'glut_from[4]', 'glut_from[3]', 'glut_from[2]', 'glut_from[1]', 'glut_from[0]', 'glut_to[15]', 'glut_to[14]', 'glut_to[13]', 'glut_to[12]', 'glut_to[11]', 'glut_to[10]', 'glut_to[9]', 'glut_to[8]', 'glut_to[7]', 'glut_to[6]', 'glut_to[5]', 'glut_to[4]', 'glut_to[3]', 'glut_to[2]', 'glut_to[1]', 'glut_to[0]', 'cp_param[sign]', 'cp_param[shifter_b][dir][1]', 'cp_param[shifter_b][dir][0]', 'cp_param[shifter_b][val][1]', 'cp_param[shifter_b][val][0]', 'cp_param[shifter_a][dir][1]', 'cp_param[shifter_a][dir][0]', 'cp_param[shifter_a][val][1]', 'cp_param[shifter_a][val][0]', 'brightness_param[8]', 'brightness_param[7]', 'brightness_param[6]', 'brightness_param[5]', 'brightness_param[4]', 'brightness_param[3]', 'brightness_param[2]', 'brightness_param[1]', 'brightness_param[0]', 'glut_from_read[15]', 'glut_from_read[14]', 'glut_from_read[13]', 'glut_from_read[12]', 'glut_from_read[11]', 'glut_from_read[10]', 'glut_from_read[9]', 'glut_from_read[8]', 'glut_from_read[7]', 'glut_from_read[6]', 'glut_from_read[5]', 'glut_from_read[4]', 'glut_from_read[3]', 'glut_from_read[2]', 'glut_from_read[1]', 'glut_from_read[0]'.
+Warning: In design 'gamma_LUT_0', the same net is connected to more than one pin on submodule 'DW_ram_2r_w_s_dff_inst'. (LINT-33)
+   Net 'glut_write_en_n' is connected to pins 'cs_n', 'wr_n''.
+Warning: In design 'contrast_0', the same net is connected to more than one pin on submodule 'add_54'. (LINT-33)
+   Net 'n1' is connected to pins 'A[10]', 'B[10]'', 'CI'.
+Warning: In design 'contrast_0', the same net is connected to more than one pin on submodule 'sub_51'. (LINT-33)
+   Net 'n2' is connected to pins 'A[10]', 'B[10]'', 'CI'.
+Warning: In design 'brightness_0', the same net is connected to more than one pin on submodule 'add_49'. (LINT-33)
+   Net 'n1' is connected to pins 'A[8]', 'CI''.
+Warning: In design 'brightness_1', the same net is connected to more than one pin on submodule 'add_49'. (LINT-33)
+   Net 'n7' is connected to pins 'A[8]', 'CI''.
+Warning: In design 'brightness_2', the same net is connected to more than one pin on submodule 'add_49'. (LINT-33)
+   Net 'n7' is connected to pins 'A[8]', 'CI''.
+Warning: In design 'brightness_3', the same net is connected to more than one pin on submodule 'add_49'. (LINT-33)
+   Net 'n7' is connected to pins 'A[8]', 'CI''.
+Warning: In design 'contrast_1', the same net is connected to more than one pin on submodule 'add_54'. (LINT-33)
+   Net 'n30' is connected to pins 'A[10]', 'B[10]'', 'CI'.
+Warning: In design 'contrast_1', the same net is connected to more than one pin on submodule 'sub_51'. (LINT-33)
+   Net 'n29' is connected to pins 'A[10]', 'B[10]'', 'CI'.
+Warning: In design 'contrast_2', the same net is connected to more than one pin on submodule 'add_54'. (LINT-33)
+   Net 'n30' is connected to pins 'A[10]', 'B[10]'', 'CI'.
+Warning: In design 'contrast_2', the same net is connected to more than one pin on submodule 'sub_51'. (LINT-33)
+   Net 'n29' is connected to pins 'A[10]', 'B[10]'', 'CI'.
+Warning: In design 'contrast_3', the same net is connected to more than one pin on submodule 'add_54'. (LINT-33)
+   Net 'n30' is connected to pins 'A[10]', 'B[10]'', 'CI'.
+Warning: In design 'contrast_3', the same net is connected to more than one pin on submodule 'sub_51'. (LINT-33)
+   Net 'n29' is connected to pins 'A[10]', 'B[10]'', 'CI'.
+Warning: In design 'gamma_LUT_1', the same net is connected to more than one pin on submodule 'DW_ram_2r_w_s_dff_inst'. (LINT-33)
+   Net 'glut_write_en_n' is connected to pins 'cs_n', 'wr_n''.
+Warning: In design 'gamma_LUT_2', the same net is connected to more than one pin on submodule 'DW_ram_2r_w_s_dff_inst'. (LINT-33)
+   Net 'glut_write_en_n' is connected to pins 'cs_n', 'wr_n''.
+Warning: In design 'gamma_LUT_3', the same net is connected to more than one pin on submodule 'DW_ram_2r_w_s_dff_inst'. (LINT-33)
+   Net 'glut_write_en_n' is connected to pins 'cs_n', 'wr_n''.
+Warning: In design 'controller', output port 'cwresp[0]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'controller', output port 'crresp[0]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_0', output port 'glut_to_read[15]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_0', output port 'glut_to_read[14]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_0', output port 'glut_to_read[13]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_0', output port 'glut_to_read[12]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_0', output port 'glut_to_read[11]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_0', output port 'glut_to_read[10]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_0', output port 'glut_to_read[9]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_0', output port 'glut_to_read[8]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'contrast_LUT', output port 'contrast_fp[7]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'contrast_LUT', output port 'contrast_fp[6]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_0', output port 'glut_rdata[15]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_0', output port 'glut_rdata[14]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_0', output port 'glut_rdata[13]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_0', output port 'glut_rdata[12]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_0', output port 'glut_rdata[11]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_0', output port 'glut_rdata[10]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_0', output port 'glut_rdata[9]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_0', output port 'glut_rdata[8]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_1', output port 'glut_to_read[15]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_1', output port 'glut_to_read[14]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_1', output port 'glut_to_read[13]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_1', output port 'glut_to_read[12]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_1', output port 'glut_to_read[11]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_1', output port 'glut_to_read[10]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_1', output port 'glut_to_read[9]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_1', output port 'glut_to_read[8]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_2', output port 'glut_to_read[15]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_2', output port 'glut_to_read[14]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_2', output port 'glut_to_read[13]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_2', output port 'glut_to_read[12]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_2', output port 'glut_to_read[11]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_2', output port 'glut_to_read[10]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_2', output port 'glut_to_read[9]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_2', output port 'glut_to_read[8]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_3', output port 'glut_to_read[15]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_3', output port 'glut_to_read[14]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_3', output port 'glut_to_read[13]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_3', output port 'glut_to_read[12]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_3', output port 'glut_to_read[11]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_3', output port 'glut_to_read[10]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_3', output port 'glut_to_read[9]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'datapath_channel_3', output port 'glut_to_read[8]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_1', output port 'glut_rdata[15]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_1', output port 'glut_rdata[14]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_1', output port 'glut_rdata[13]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_1', output port 'glut_rdata[12]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_1', output port 'glut_rdata[11]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_1', output port 'glut_rdata[10]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_1', output port 'glut_rdata[9]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_1', output port 'glut_rdata[8]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_2', output port 'glut_rdata[15]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_2', output port 'glut_rdata[14]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_2', output port 'glut_rdata[13]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_2', output port 'glut_rdata[12]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_2', output port 'glut_rdata[11]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_2', output port 'glut_rdata[10]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_2', output port 'glut_rdata[9]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_2', output port 'glut_rdata[8]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_3', output port 'glut_rdata[15]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_3', output port 'glut_rdata[14]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_3', output port 'glut_rdata[13]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_3', output port 'glut_rdata[12]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_3', output port 'glut_rdata[11]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_3', output port 'glut_rdata[10]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_3', output port 'glut_rdata[9]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'gamma_LUT_3', output port 'glut_rdata[8]' is connected directly to 'logic 0'. (LINT-52)
+design_vision> 

@@ -1,0 +1,160 @@
+****************************************
+Report : power
+        -analysis_effort low
+Design : top
+Version: R-2020.09-SP2
+Date   : Sun Jan 22 16:03:42 2023
+****************************************
+
+
+Library(s) Used:
+
+    tsl18fs120_typ (File: /tools/kits/tower/PDK_TS18SL/FS120_STD_Cells_0_18um_2005_12/DW_TOWER_tsl18fs120/2005.12/synopsys/2004.12/models/tsl18fs120_typ.db)
+
+
+Operating Conditions: tsl18fs120_typ   Library: tsl18fs120_typ
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+top                    140000            tsl18fs120_typ
+axi_lite               4000              tsl18fs120_typ
+controller             4000              tsl18fs120_typ
+axi_stream_slave       4000              tsl18fs120_typ
+datapath_channel_0     35000             tsl18fs120_typ
+axi_stream_master      4000              tsl18fs120_typ
+axi_lite_DW_fifo_s2_sf_0
+                       4000              tsl18fs120_typ
+contrast_LUT           4000              tsl18fs120_typ
+gamma_LUT_0            35000             tsl18fs120_typ
+contrast_0             4000              tsl18fs120_typ
+brightness_0           4000              tsl18fs120_typ
+axi_lite_DW_fifoctl_s2_sf_0
+                       4000              tsl18fs120_typ
+shifter_0              ForQA             tsl18fs120_typ
+axi_lite_DW_FIFOCTL_IF_0
+                       4000              tsl18fs120_typ
+axi_lite_DW_FIFOCTL_IF_1
+                       4000              tsl18fs120_typ
+datapath_channel_1     35000             tsl18fs120_typ
+datapath_channel_2     35000             tsl18fs120_typ
+datapath_channel_3     35000             tsl18fs120_typ
+brightness_1           4000              tsl18fs120_typ
+brightness_2           4000              tsl18fs120_typ
+brightness_3           4000              tsl18fs120_typ
+contrast_1             4000              tsl18fs120_typ
+contrast_2             4000              tsl18fs120_typ
+contrast_3             4000              tsl18fs120_typ
+shifter_1              ForQA             tsl18fs120_typ
+shifter_2              ForQA             tsl18fs120_typ
+shifter_3              ForQA             tsl18fs120_typ
+shifter_4              ForQA             tsl18fs120_typ
+shifter_5              ForQA             tsl18fs120_typ
+shifter_6              ForQA             tsl18fs120_typ
+shifter_7              ForQA             tsl18fs120_typ
+gamma_LUT_1            35000             tsl18fs120_typ
+gamma_LUT_2            35000             tsl18fs120_typ
+gamma_LUT_3            35000             tsl18fs120_typ
+brightness_1_DW01_add_0
+                       ForQA             tsl18fs120_typ
+contrast_1_DW01_add_0_DW01_add_1
+                       ForQA             tsl18fs120_typ
+contrast_1_DW01_sub_0_DW01_sub_2
+                       ForQA             tsl18fs120_typ
+gamma_LUT_1_DW_ram_2r_w_s_dff_0
+                       35000             tsl18fs120_typ
+brightness_2_DW01_add_0_DW01_add_2
+                       ForQA             tsl18fs120_typ
+contrast_2_DW01_add_0_DW01_add_3
+                       ForQA             tsl18fs120_typ
+contrast_2_DW01_sub_0_DW01_sub_3
+                       ForQA             tsl18fs120_typ
+gamma_LUT_2_DW_ram_2r_w_s_dff_0_DW_ram_2r_w_s_dff_1
+                       35000             tsl18fs120_typ
+brightness_3_DW01_add_0_DW01_add_4
+                       ForQA             tsl18fs120_typ
+contrast_3_DW01_add_0_DW01_add_5
+                       ForQA             tsl18fs120_typ
+contrast_3_DW01_sub_0_DW01_sub_4
+                       ForQA             tsl18fs120_typ
+gamma_LUT_3_DW_ram_2r_w_s_dff_0_DW_ram_2r_w_s_dff_2
+                       35000             tsl18fs120_typ
+brightness_0_DW01_add_0_DW01_add_6
+                       ForQA             tsl18fs120_typ
+contrast_0_DW01_add_0_DW01_add_7
+                       ForQA             tsl18fs120_typ
+contrast_0_DW01_sub_0_DW01_sub_5
+                       ForQA             tsl18fs120_typ
+gamma_LUT_0_DW_ram_2r_w_s_dff_0_DW_ram_2r_w_s_dff_3
+                       35000             tsl18fs120_typ
+axi_lite_DW_fifo_s2_sf_1
+                       4000              tsl18fs120_typ
+axi_lite_DW_fifoctl_s2_sf_1
+                       4000              tsl18fs120_typ
+axi_lite_DW_FIFOCTL_IF_2
+                       4000              tsl18fs120_typ
+axi_lite_DW_FIFOCTL_IF_3
+                       4000              tsl18fs120_typ
+axi_lite_DW_ram_r_w_s_dff_1
+                       4000              tsl18fs120_typ
+axi_lite_DW_fifo_s2_sf_2
+                       4000              tsl18fs120_typ
+axi_lite_DW_fifoctl_s2_sf_2
+                       4000              tsl18fs120_typ
+axi_lite_DW_FIFOCTL_IF_4
+                       4000              tsl18fs120_typ
+axi_lite_DW_FIFOCTL_IF_5
+                       4000              tsl18fs120_typ
+axi_lite_DW_ram_r_w_s_dff_2
+                       4000              tsl18fs120_typ
+axi_lite_DW_fifo_s2_sf_3
+                       4000              tsl18fs120_typ
+axi_lite_DW_fifoctl_s2_sf_3
+                       4000              tsl18fs120_typ
+axi_lite_DW_FIFOCTL_IF_6
+                       4000              tsl18fs120_typ
+axi_lite_DW_FIFOCTL_IF_7
+                       4000              tsl18fs120_typ
+axi_lite_DW_ram_r_w_s_dff_3
+                       4000              tsl18fs120_typ
+axi_lite_DW_fifo_s2_sf_4
+                       4000              tsl18fs120_typ
+axi_lite_DW_fifoctl_s2_sf_4
+                       4000              tsl18fs120_typ
+axi_lite_DW_FIFOCTL_IF_8
+                       4000              tsl18fs120_typ
+axi_lite_DW_FIFOCTL_IF_9
+                       4000              tsl18fs120_typ
+axi_lite_DW_ram_r_w_s_dff_4
+                       4000              tsl18fs120_typ
+
+
+Global Operating Voltage = 1.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  =  56.8205 mW   (96%)
+  Net Switching Power  =   2.6356 mW    (4%)
+                         ---------
+Total Dynamic Power    =  59.4561 mW  (100%)
+
+Cell Leakage Power     =   1.7350 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register          56.3816        2.3452e-02        1.3441e+06           56.4064  (  94.87%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational      0.4374            2.6121        3.9089e+05            3.0500  (   5.13%)
+--------------------------------------------------------------------------------------------------
+Total             56.8190 mW         2.6356 mW     1.7350e+06 pW        59.4564 mW
