@@ -1,0 +1,3 @@
+Designed a digital video enhancement block which: operates on continuous video accepted by AXI-Stream protocol with constant delay,
+allows user to set set algorithm parameters in-operation via AXI-Lite, and supports different resolutions.
+Project work included RTL design, synthesis and layout, and functional verification by RTL simulation using SystemVerilog testbenches.
